@@ -1,0 +1,51 @@
+{
+  "name": "if-empty",
+  "version": "0.0.0",
+  "description": "If second argument is empty return first argument, useful for yeoman generators prompts",
+  "main": "index.es5.js",
+  "files": [
+    "index.es5.js"
+  ],
+  "scripts": {
+    "watch": "npm run transpile -- --watch",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha index.js -- --compilers js:babel-core/register",
+    "precoveralls": "npm run coverage",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "test": "mocha --require babel-core/register",
+    "tdd": "npm test -- --watch",
+    "transpile": "babel index.js --out-file index.es5.js",
+    "prepublish": "npm run transpile",
+    "clean": "rimraf index.es5.js",
+    "push": "git push --follow-tags",
+    "postpublish": "npm-run-all clean push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamstarkov/if-empty.git"
+  },
+  "keywords": [
+    "yeoman"
+  ],
+  "author": "Vladimir Starkov <iamstarkov@gmail.com> (https://iamstarkov.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamstarkov/if-empty/issues"
+  },
+  "homepage": "https://github.com/iamstarkov/if-empty#readme",
+  "devDependencies": {
+    "assert": "*",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.5.0",
+    "coveralls": "*",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-require-path-exists": "^1.1.5",
+    "isparta": "*",
+    "mocha": "*",
+    "npm-run-all": "*",
+    "rimraf": "*"
+  }
+}
