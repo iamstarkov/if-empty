@@ -3,12 +3,10 @@ import { equal } from 'assert';
 import ifEmpty from './index';
 
 it('should ifEmpty', () => {
-  equal(ifEmpty('unicorns'), 'unicorns');
+  equal(ifEmpty('unicorns')(''), 'unicorns');
+  equal(ifEmpty('unicorns', ''), 'unicorns');
   equal(ifEmpty('unicorns', null), 'unicorns');
-  equal(ifEmpty('unicorns')(), 'unicorns');
-  equal(ifEmpty('unicorns', 'not-empty'), true);
-  equal(ifEmpty('unicorns')('not-empty'), true);
+  equal(ifEmpty('unicorns', null), 'unicorns');
+  equal(ifEmpty('unicorns', 'Ben'), true);
+  equal(ifEmpty('unicorns')('Ben'), true);
 });
-
-it('should ifEmpty invalid input', () =>
-  equal(ifEmpty(), undefined));
