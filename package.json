@@ -1,7 +1,7 @@
 {
   "name": "if-empty",
   "version": "0.0.0",
-  "description": "If second argument is empty return first argument, useful for yeoman generators prompts",
+  "description": "If `value` (second argument) is empty return `reason` (first argument) otherwise return `true`",
   "main": "index.es5.js",
   "files": [
     "index.es5.js"

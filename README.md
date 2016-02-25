@@ -5,7 +5,7 @@
 [![Coveralls Status][coveralls-image]][coveralls-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> If second argument is empty return first argument, useful for yeoman generators prompts
+> If `value` (second argument) is empty return `reason` (first argument) otherwise return `true`
 
 ## Install
 
