@@ -1,6 +1,6 @@
 {
   "name": "if-empty",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "If `value` (second argument) is empty return `reason` (first argument) otherwise return `true`",
   "main": "index.es5.js",
   "files": [
