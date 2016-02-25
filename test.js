@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import { equal } from 'assert';
 import ifEmpty from './index';
 
