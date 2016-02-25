@@ -16,28 +16,44 @@
 ```js
 import ifEmpty from 'if-empty';
 
-ifEmpty('unicorns'); // unicorns
+ifEmpty('You have to provide name', '');    // "You have to provide name"
+ifEmpty('You have to provide name', 'Ben'); // true, `value` is not empty
+```
+
+Also useful for validating inquirer prompts, as well as yeoman prompts
+```js
+import inquirer from 'inquirer';
+
+inquirer.prompt([{
+  name: 'name',
+  message: '☯ your name:',
+  validate: ifEmpty('You have to provide name'), // curried
+}], function(answers) {
+  console.log(answers);
+});
 ```
 
 ## API
 
-### ifEmpty(input, [options])
+### ifEmpty(reason, value)
 
-#### input
+```js
+// ifEmpty :: String -> String -> true | String`
+```
+
+#### reason
 
 *Required*  
 Type: `String`
 
-Lorem ipsum.
+Reason for invalid value.
 
-#### options
+#### value
 
-##### foo
+*Required*  
+Type: `String`
 
-Type: `Boolean`  
-Default: `false`
-
-Lorem ipsum.
+Value to validate.
 
 ## License
 
